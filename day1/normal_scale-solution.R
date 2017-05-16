@@ -10,14 +10,13 @@ normal <- "
   real<lower=0> sigma0;
   real<lower=0> sigma2;
   real<lower=0> sigma20;
+ 
 	}
   transformed parameters {
   real<lower=0> sigma;
-  ##sigma = sqrt(sigma2);
+  sigma = sqrt(sigma2);
 	}
 	model {
-  sigma ~ cauchy(mu0,sigma0);
-  sigma ~ lognormal(mu0,sigma20);
   sigma2 ~ inv_gamma(1,1);
   mu ~ normal(mu0,sigma20);
   y ~ normal(mu,sigma2);

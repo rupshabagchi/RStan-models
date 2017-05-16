@@ -3,7 +3,8 @@ require(MASS)
 normal <- "
 	data {		
    int <lower=1> N;
-   matrix[N,N] I;
+   vector[N] mu;
+   vector[N] y;
 	}
 	parameters {
   real mu0;
@@ -11,15 +12,13 @@ normal <- "
   real<lower=0> sigma20;
 	}
 	transformed parameters {
-  vector[N] mu;
-  vector[N] y;
+  cov_matrix[N] newsigma ~ sigma20*diag_matrix(y); 
 	}
 	model {
   sigma2 ~ inv_gamma(1,1);
-  for(i in 1:N){
-  mu[i] ~ normal(mu0,sigma20*I);
-  y[i] ~ normal(mu,sigma2*I);
-  }
+  mu ~ normal(mu0,newsigma);
+  y ~ normal(mu,newsigma);
+  
 }"
 
 D <- 10
