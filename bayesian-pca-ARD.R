@@ -28,9 +28,10 @@ pca <- "
 	}
 	model {
     tau ~ gamma(1, 1);
-    for(k in 1:K){
     alpha ~ gamma(1e-3,1e-3);
-    }
+    to_vector(Z) ~ normal(0,1);
+    for(k in 1:K) W[,k] ~ normal(0,  t_alpha[k]);
+    to_vector(X) ~ normal(to_vector(Z*W'),t_tau);
 	} "
 
 
