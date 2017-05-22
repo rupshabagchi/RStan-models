@@ -1,16 +1,16 @@
 # RStan-models
 
-##Bernoulli model  
+## Bernoulli model  
 
 	y∼Bern(θ)
 	θ∼Beta(α,β)
 
-##Binomial model
+## Binomial model
 
 	y∼Bin(N,θ)
 	θ∼Beta(α,β)
 
-##Poisson-Gamma model
+## Poisson-Gamma model
 
 	y∼Poisson(λ)
 	λ∼Gamma(α0,β0)
