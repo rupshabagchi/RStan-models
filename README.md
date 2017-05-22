@@ -10,6 +10,7 @@
 	y∼Bin(N,θ)
 	θ∼Beta(α,β)
 
-##Poisson-Gamma model 
+##Poisson-Gamma model
+
 	y∼Poisson(λ)
 	λ∼Gamma(α0,β0)
