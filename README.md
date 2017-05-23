@@ -1,5 +1,7 @@
 # RStan-models
 
+This repo consists of STAN code using R, used to model data following the distributions mentioned below. 
+
 ## Bernoulli model  
 
 	y∼Bern(θ)
