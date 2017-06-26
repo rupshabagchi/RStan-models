@@ -1,6 +1,6 @@
 # RStan-models
 
-STAN code using R, used to model data following the distributions mentioned below. 
+STAN code using R, used to model data following the distributions mentioned below. A part of Unsupervised Machine Learning course.
 
 ## Bernoulli model  
 
